@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Tag images (ensure these match names built by docker-compose)
-                    sh "docker tag mean_frontend:latest $IMAGE_NAME_FRONTEND:latest"
+                    sh "docker tag job1_frontend:latest $IMAGE_NAME_FRONTEND:latest"
                     sh "docker tag mean_backend:latest $IMAGE_NAME_BACKEND:latest"
                     
                     sh "docker push $IMAGE_NAME_FRONTEND:latest"
