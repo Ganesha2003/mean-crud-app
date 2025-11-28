@@ -52,25 +52,25 @@ volumes:
 The backend uses a standard Node.js image to build and run the Express API.
 
 Dockerfile
-# Stage 1: Use the official Node.js image as the base
+Stage 1: Use the official Node.js image as the base
 FROM node:14
 
-# Set the working directory inside the container
+Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy package files (package.json and package-lock.json) first
+Copy package files (package.json and package-lock.json) first
 COPY package*.json ./
 
-# Install dependencies
+Install dependencies
 RUN npm install
 
-# Copy the rest of the application source code
+Copy the rest of the application source code
 COPY . .
 
-# Expose the port the Express server is listening on
+Expose the port the Express server is listening on
 EXPOSE 8080
 
-# Define the command to run the application
+Define the command to run the application
 CMD ["node", "server.js"]
 ________________________________________
 2.4 Frontend Dockerfile (frontend/Dockerfile)
