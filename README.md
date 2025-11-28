@@ -221,3 +221,16 @@ Initiate the automated deployment by clicking "Build Now" in the Jenkins job vie
 5.2 Access the Application
 Once the Jenkins build successfully completes, the application is live and accessible via the EC2 Public IP:
 •	Frontend Application: http://<EC2-PUBLIC-IP> (Port 80)
+
+Build sucess
+![Build sucess](image.png)
+
+Application before entering data
+![Application before entering data](image-1.png)
+
+Adding data in the application
+![Adding data in the application](image-2.png)
+
+After adding the data into the appliaction
+![After adding the data into the application](image-3.png) 
+
