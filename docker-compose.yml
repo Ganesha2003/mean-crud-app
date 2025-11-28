@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: mean_backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      - DB_URL=mongodb://mongo:27017/dd_db
+
+  frontend:
+    build: ./frontend
+    container_name: mean_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
