@@ -2,13 +2,13 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
-        IMAGE_NAME_FRONTEND = 'rmganesha/mean-frontend'
-        IMAGE_NAME_BACKEND = 'rmganesha/mean-backend'
+        IMAGE_NAME_FRONTEND = 'rmganesha/mean-frontend' #replace with your image name
+        IMAGE_NAME_BACKEND = 'rmganesha/mean-backend'   #replace with your image name
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Ganesha2003/mean-crud-app.git'
+                git branch: 'main', url: 'https://github.com/Ganesha2003/mean-crud-app.git'  #Replace with your github url
             }
         }
         stage('Build Docker Images') {
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     // Tag images (ensure these match names built by docker-compose)
-                    sh "docker tag job1_frontend:latest $IMAGE_NAME_FRONTEND:latest"
+                    sh "docker tag job1_frontend:latest $IMAGE_NAME_FRONTEND:latest"    #change to your image name
                     sh "docker tag job1_backend:latest $IMAGE_NAME_BACKEND:latest"
                     
                     sh "docker push $IMAGE_NAME_FRONTEND:latest"
