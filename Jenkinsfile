@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
-        IMAGE_NAME_FRONTEND = '<your-dockerhub-username>/mean-frontend'
-        IMAGE_NAME_BACKEND = '<your-dockerhub-username>/mean-backend'
+        IMAGE_NAME_FRONTEND = 'rmganesha/mean-frontend'
+        IMAGE_NAME_BACKEND = 'rmganesha/mean-backend'
     }
     stages {
         stage('Checkout') {
